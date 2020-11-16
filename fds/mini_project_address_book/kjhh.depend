@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1604429525 source:/home/sachin/Desktop/prac/kjhh/address_book.cpp
+	<iostream>
+	<string>
+	"record.h"
+	"llist.h"
+	"address_book.h"
+
+1604432529 /home/sachin/Desktop/prac/kjhh/record.h
+	<string>
+
+1604432491 /home/sachin/Desktop/prac/kjhh/llist.h
+	<string>
+
+1604428686 /home/sachin/Desktop/prac/kjhh/address_book.h
+	<string>
+
+1604432201 source:/home/sachin/Desktop/prac/kjhh/llist.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"record.h"
+	"llist.h"
+	"address_book.h"
+
+1604427876 source:/home/sachin/Desktop/prac/kjhh/main.cpp
+	<iostream>
+	<string>
+	"address_book.h"
+
+1604485832 source:/home/sachin/Desktop/prac/address_book/address_book.cpp
+	<iostream>
+	<string>
+	"record.h"
+	"llist.h"
+	"address_book.h"
+
+1604432529 /home/sachin/Desktop/prac/address_book/record.h
+	<string>
+
+1604432491 /home/sachin/Desktop/prac/address_book/llist.h
+	<string>
+
+1604481503 /home/sachin/Desktop/prac/address_book/address_book.h
+	<string>
+
+1604432201 source:/home/sachin/Desktop/prac/address_book/llist.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"record.h"
+	"llist.h"
+	"address_book.h"
+
+1604485574 source:/home/sachin/Desktop/prac/address_book/main.cpp
+	<iostream>
+	<string>
+	"address_book.h"
+	"login.h"
+
+1604482948 source:/home/sachin/Desktop/prac/address_book/login.cpp
+	<iostream>
+	<fstream>
+	"login.h"
+
+1604482744 /home/sachin/Desktop/prac/address_book/login.cpp
+	<iostream>
+	<fstream>
+	<string>
+
+1604482882 /home/sachin/Desktop/prac/address_book/login.h
+	<string>
+
