@@ -2,12 +2,13 @@
 #include <string>
 #include <map>
 using namespace std;
-template<class t>
+template <class t>
 class stack
 {
-    t* arr;
+    t *arr;
     int index;
     int n;
+
 public:
     stack(int n = 1000)
     {
@@ -17,7 +18,7 @@ public:
     }
     ~stack()
     {
-        delete[]arr;
+        delete[] arr;
     }
     bool empty()
     {
@@ -57,7 +58,8 @@ bool isbalanced(string s)
         {
             arr.push(s[i]);
         }
-        else {
+        else
+        {
             if (arr.empty() && (s[i] == ')' || s[i] == ']' || s[i] == '}'))
             {
                 return false;
@@ -88,13 +90,18 @@ bool isbalanced(string s)
     return arr.empty();
 }
 
-int getWeight(char ch) {
-    switch (ch) {
+int getWeight(char ch)
+{
+    switch (ch)
+    {
     case '/':
-    case '*': return 2;
+    case '*':
+        return 2;
     case '+':
-    case '-': return 1;
-    default: return 0;
+    case '-':
+        return 1;
+    default:
+        return 0;
     }
 }
 
@@ -110,36 +117,45 @@ string infixToPostfix(string infix)
     string postfix = "";
     int i = 0;
     int k = 0;
-    while (i < n) {
+    while (i < n)
+    {
         char ch = infix[i];
-        if (ch == '(') {
+        if (ch == '(')
+        {
             s.push(ch);
             i++;
             continue;
         }
-        if (ch == ')') {
-            while (!s.empty() && s.top() != '(') {
-                postfix+= s.top();
+        if (ch == ')')
+        {
+            while (!s.empty() && s.top() != '(')
+            {
+                postfix += s.top();
                 s.pop();
             }
-            if (!s.empty()) {
+            if (!s.empty())
+            {
                 s.pop();
             }
             i++;
             continue;
         }
         int weight = getWeight(ch);
-        if (weight == 0) {
-            postfix+= ch;
-
+        if (weight == 0)
+        {
+            postfix += ch;
         }
-        else {
-            if (s.empty()) {
+        else
+        {
+            if (s.empty())
+            {
                 s.push(ch);
             }
-            else {
+            else
+            {
                 while (!s.empty() && s.top() != '(' &&
-                    weight <= getWeight(s.top())) {
+                       weight <= getWeight(s.top()))
+                {
                     postfix += s.top();
                     s.pop();
                 }
@@ -148,33 +164,44 @@ string infixToPostfix(string infix)
         }
         i++;
     }
-    while (!s.empty()) {
-        postfix+= s.top();
+    while (!s.empty())
+    {
+        postfix += s.top();
         s.pop();
     }
     return postfix;
 }
 
-int calculate(int op1, int op2, char operate) {
-    switch (operate) {
-    case '*': return op2 * op1;
-    case '/': return op2 / op1;
-    case '+': return op2 + op1;
-    case '-': return op2 - op1;
-    default: return 0;
+int calculate(int op1, int op2, char operate)
+{
+    switch (operate)
+    {
+    case '*':
+        return op2 * op1;
+    case '/':
+        return op2 / op1;
+    case '+':
+        return op2 + op1;
+    case '-':
+        return op2 - op1;
+    default:
+        return 0;
     }
 }
 
-int evalPostfix(string postfix) {
+int evalPostfix(string postfix)
+{
     stack<int> s;
     int n = postfix.length();
-    map<char, int>mp;
+    map<char, int> mp;
     int i = 0;
     char ch;
     int val;
-    while (i < n) {
+    while (i < n)
+    {
         ch = postfix[i];
-        if ((ch>='A' && ch<='Z') || (ch>='a' && ch<='z')) {
+        if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+        {
             if (mp.find(ch) != mp.end())
             {
                 s.push(mp[ch]);
@@ -188,7 +215,8 @@ int evalPostfix(string postfix) {
                 s.push(mp[ch]);
             }
         }
-        else {
+        else
+        {
             int op1 = s.top();
             s.pop();
             int op2 = s.top();
