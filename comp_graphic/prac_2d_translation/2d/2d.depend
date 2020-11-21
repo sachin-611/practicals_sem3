@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1602574292 source:f:\practical\comp_graphic\prac_2d_translation\2d\main.cpp
+	<windows.h>
+	<GL/glut.h>
+	<bits/stdc++.h>
+
+1599545816 d:\software\mingw_c++\glut\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1602573384 source:f:\practical\comp_graphic\prac_2d_translation\2d\2d.cpp
+
