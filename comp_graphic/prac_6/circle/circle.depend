@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1598364986 source:/media/sachin/professional/practical/comp_graphic/prac_6/circle/main.cpp
-	<iostream>
-	<GL/glut.h>
-	<math.h>
-
