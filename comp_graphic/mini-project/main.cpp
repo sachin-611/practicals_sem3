@@ -14,7 +14,26 @@ void init(void)
     glOrtho(0, 7, -1, 4, -1, 1);
     glMatrixMode(GL_MODELVIEW);
 }
+void drawText(float x, float y, float z, char * str, float r, float g, float b)
+{
+    glColor3f(r, g, b);
+    glRasterPos3f(x, y, z);
+    for (char* c = str; *c != '\0'; c++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
+}
 
+void writeText(float x, float y, float z, char* str, float r, float g, float b, float scalex, float scaley, float scalez)
+{
+    glColor3f(r, g, b);
+    glPushMatrix();
+    glTranslatef(x, y, z);
+    glScalef(scalex, scaley, scaley);
+    for (char *c= str; *c != '\0'; c++)
+    {
+        glutStrokeCharacter(GLUT_STROKE_MONO_ROMAN, *c);
+    }
+    glPopMatrix();
+}
 void drawhill(void)
 {
 //    glOrtho()
@@ -113,6 +132,17 @@ void drawAllWindmill(void)
 	glScaled(0.3,0.3,1);
 	drawWindmill();
 	glPopMatrix();
+    //board
+    glColor3f(1,1,1);
+	glPushMatrix();
+    glBegin(GL_POLYGON);
+        glVertex2f(4+2,2-1.3);
+        glVertex2f(5,2-1.3);
+        glVertex2f(5,3-0.5-1.3);
+        glVertex2f(4+2,3-0.5-1.3);
+    glEnd();
+	glPopMatrix();
+
 }
 
 void drawTyre() {
@@ -159,7 +189,7 @@ void drawBus() {
 	glEnd();
 	//luggage ends
 	//bus body begin
-	glColor3f(1,0,1);
+	glColor3f(50,0,100);
 	glBegin(GL_POLYGON);
 	glVertex2f(-4.5f,0);
 	glVertex2f(4.5f,0);
@@ -179,7 +209,7 @@ void drawBus() {
 
 void drawnight()
 {
-    glClearColor(0,0,0,0);
+   // glClearColor(0,0,0,0);
 }
 
 void display(void)
@@ -198,12 +228,51 @@ void display(void)
 	glTranslated(-3 + 14*(frameNumber % 300) / 300.0, 0, 0);
 	glScaled(0.3,0.3,1);
 	drawBus();
-
+    writeText(-4.0, 1.2, 0, "bhanupratap", 1.0f, 1.0f, 0.0f, 0.007f, 0.01f, 0.1f);
+    writeText(-4.0, 0.1, 0, "bus service", 1.0f, 1.0f, 0.0f, 0.007f, 0.01f, 0.1f);
+	glColor3f(0,0,9);
+    glBegin(GL_POLYGON);
+        glVertex2f(-4-0.15,2.5);
+        glVertex2f(-3-0.15,2.5);
+        glVertex2f(-3-0.15,3.5);
+        glVertex2f(-4-0.15,3.5);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glVertex2f(-4+1.2,2.5);
+        glVertex2f(-3+1.2,2.5);
+        glVertex2f(-3+1.2,3.5);
+        glVertex2f(-4+1.2,3.5);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glVertex2f(-4+2.5,2.5);
+        glVertex2f(-3+2.5,2.5);
+        glVertex2f(-3+2.5,3.5);
+        glVertex2f(-4+2.5,3.5);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glVertex2f(-4+3.8,2.5);
+        glVertex2f(-3+3.8,2.5);
+        glVertex2f(-3+3.8,3.5);
+        glVertex2f(-4+3.8,3.5);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glVertex2f(-4+5.1,2.5);
+        glVertex2f(-3+5.1,2.5);
+        glVertex2f(-3+5.1,3.5);
+        glVertex2f(-4+5.1,3.5);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glVertex2f(-4+7,2.5);
+        glVertex2f(-3+7,2.5);
+        glVertex2f(-3+7,3.5);
+        glVertex2f(-4+7,3.5);
+    glEnd();
 	glPopMatrix();
 	glutSwapBuffers();
 }
 
-void doFrame(int v) {
+void doFrame(int v)
+{
     frameNumber++;
     glutPostRedisplay();
     glutTimerFunc(20,doFrame,0);
