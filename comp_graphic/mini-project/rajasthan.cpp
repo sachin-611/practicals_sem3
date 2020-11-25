@@ -231,6 +231,25 @@ public:
         if(runBus)
             startBus();
     }
+    void sandHills()
+    {
+        glColor3f(1.9f, 0.8f, 0.5f);
+        glBegin(GL_POLYGON);//first hill
+        glVertex2f(-3,-1);
+        glVertex2f(1.0f,1.65f);
+        glVertex2f(5,-1);
+        glEnd();
+        glBegin(GL_POLYGON); // second hill overlapping first
+        glVertex2f(-3,-1);
+        glVertex2f(3,2.1f);
+        glVertex2f(7,-1);
+        glEnd();
+        glBegin(GL_POLYGON); // third hill
+        glVertex2f(0,-1);
+        glVertex2f(6,1.2f);
+        glVertex2f(20,-1);
+        glEnd();
+    }
     void drawHouse()
     {
         //body
@@ -347,25 +366,6 @@ public:
         windmill mill3;
         glPopMatrix();
     }
-    void sandHills()
-    {
-        glColor3f(1.9f, 0.8f, 0.5f);
-        glBegin(GL_POLYGON);//first hill
-        glVertex2f(-3,-1);
-        glVertex2f(1.0f,1.65f);
-        glVertex2f(5,-1);
-        glEnd();
-        glBegin(GL_POLYGON); // second hill overlapping first
-        glVertex2f(-3,-1);
-        glVertex2f(3,2.1f);
-        glVertex2f(7,-1);
-        glEnd();
-        glBegin(GL_POLYGON); // third hill
-        glVertex2f(0,-1);
-        glVertex2f(6,1.2f);
-        glVertex2f(20,-1);
-        glEnd();
-    }
     void road()
     {
         glColor3f(0.4f, 0.4f, 0.5f);
@@ -462,11 +462,11 @@ public:
     }
 };
 
-void doFrame(int v)
+void nextFrame(int v)
 {
     frameNumber++;
     glutPostRedisplay();
-    glutTimerFunc(20,doFrame,0);
+    glutTimerFunc(20,nextFrame,0);
 }
 
 void menus()
@@ -477,35 +477,48 @@ void menus()
     cout<<"\nPress l for turning on light of house";
     cout<<"\nPress f for turing off light of house";
     cout<<"\nPress o for opening door of house";
-    cout<<"\nPress c for close door of house";
+    cout<<"\nPress c for close door of house"<<endl<<endl;
 }
 
-void init(void)
-{
-    glClearColor(0.4f,0.5f,1,1);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    menus();
-    glOrtho(0, 7, -1, 4, -1, 1);
-    glMatrixMode(GL_MODELVIEW);
-}
+
 
 void keyboardFunc( unsigned char key, int x, int y )
 {
     if(key=='n')
+    {
         isDay=false;
+        cout<<"Pressed 'n' key"<<endl;
+    }
     if(key=='d')
+    {
         isDay=true;
+        cout<<"Pressed 'd' key"<<endl;
+    }
     if(key=='l')
+    {
         light_off=false;
+        cout<<"Pressed 'l' key"<<endl;
+    }
     if(key=='f')
+    {
         light_off=true;
+        cout<<"Pressed 'f' key"<<endl;
+    }
     if(key=='o')
+    {
         isOpen=true;
+        cout<<"Pressed 'o' key"<<endl;
+    }
     if(key=='c')
+    {
         isOpen=false;
+        cout<<"Pressed 'c' key"<<endl;
+    }
     if(key=='b')
+    {
         runBus=!runBus;
+        cout<<"Pressed 'b' key"<<endl;
+    }
 }
 
 void display(void)
@@ -520,17 +533,27 @@ void display(void)
     glutSwapBuffers();
 }
 
+void init(void)
+{
+    glClearColor(0.4f,0.5f,1,1);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    menus();
+    glOrtho(0, 7, -1, 4, -1, 1);
+    glMatrixMode(GL_MODELVIEW);
+}
+
 int main(int argc,char **argv)
 {
     glutInit(&argc,argv);
-    glutInitDisplayMode(GLUT_DOUBLE);
+    glutInitDisplayMode(GLUT_SINGLE);
     glutInitWindowPosition(200,200);
     glutInitWindowSize(700,500);
     glutCreateWindow("Mini-project");
     init();
     glutDisplayFunc(display);
     glutKeyboardFunc(keyboardFunc);
-    glutTimerFunc(20,doFrame,0);
+    glutTimerFunc(20,nextFrame,0);
     glutMainLoop();
     return 0;
 }
