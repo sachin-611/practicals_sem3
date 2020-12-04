@@ -7,7 +7,6 @@ void run_program();
 void program();
 void display_commands();
 int get_menu_selection();
-int get_menu_selection2();
 string get_name();
 string get_address();
 int get_birth_year();

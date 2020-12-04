@@ -4,32 +4,11 @@
 #include "llist.h"
 #include "address_book.h"
 using namespace std;
-
-int get_menu_selection2() {
-    int selection = 0;
-    cin >> selection;
-    while (cin.fail() || selection < 1 || selection > 5) {
-        if (cin.fail()) {
-            cout << "Your input was not an integer. Please enter an integer: ";
-        } else if ( selection < 1 || selection > 5) {
-            cout << "Not a valid choice.\n";
-            display_commands();
-        }
-        cin.clear();
-        cin.ignore(256, '\n');
-        cin >> selection;
-    }
-    cin.clear();
-    return selection;
-}
-
 void display_command_user() {
     cout << "Usage:\n";
     cout << "\t1: Print information about a record using the name as the key. \n";
-    cout << "\t2: Print information about a record using the phone number as the key. \n";
-    cout << "\t3: Print information about a record using the address as the key. \n";
-    cout << "\t4: Print all information in the database.\n";
-    cout << "\t5: Quit the program.\n";
+    cout << "\t2: Print all information in the database.\n";
+    cout << "\t3: Quit the program.\n";
     cout << "What would you like to do?\n";
     return;
 }
@@ -38,40 +17,26 @@ void program()
     llist records(get_file_name());
     int menu_selection = 0;
     string input_name;
-    string input_phone;
-    string input_address;
     display_command_user();
     do {
-        menu_selection = get_menu_selection2();
+        menu_selection = get_menu_selection();
         switch (menu_selection) {
             case 1:
                 cout << "--------------------\n";
                 cout << "Print Record(s) with the same name\n";
                 input_name = get_name();
-                records.print_record(input_name,0);
+                records.print_record(input_name);
                 break;
             case 2:
-                cout << "--------------------\n";
-                cout << "Print Record(s) with the same phone number\n";
-                input_phone=get_phone_number();
-                records.print_record_phone(input_phone);
-                break;
-             case 3:
-                cout << "--------------------\n";
-                cout << "Print Record(s) with the same address\n";
-                input_address=get_address();
-                records.print_record_address(input_address);
-                break;
-            case 4:
                 cout << "--------------------\n";
                 cout << "Printing Records...\n";
                 records.print_all_records();
                 break;
         }
-        if (menu_selection != 5) {
+        if (menu_selection != 3) {
             display_command_user();
         }
-    } while (menu_selection != 5);
+    } while (menu_selection != 3);
     return;
 }
 
@@ -99,23 +64,11 @@ void run_program() {
                 break;
             case 2:
                 cout << "--------------------\n";
-                cout << "Print Record(s) with the name\n";
+                cout << "Print Record(s) with the same name\n";
                 input_name = get_name();
-                records.print_record(input_name,1);
+                records.print_record(input_name);
                 break;
             case 3:
-                cout << "--------------------\n";
-                cout << "Print Record(s) with the same phone number\n";
-                input_phone = get_phone_number();
-                records.print_record_phone(input_phone);
-                break;
-            case 4:
-                cout << "--------------------\n";
-                cout << "Print Record(s) with the same address\n";
-                input_address = get_address();
-                records.print_record_address(input_address);
-                break;
-            case 5:
                 cout << "--------------------\n";
                 cout << "Modify Record(s) with the same name\n";
                 input_name = get_name();
@@ -124,57 +77,27 @@ void run_program() {
                 input_phone = get_phone_number();
                 records.modify_record(input_name, input_address, input_phone);
                 break;
-            case 6:
-                cout << "--------------------\n";
-                cout << "Modify Record(s) with the same phone number\n";
-                input_name = get_name();
-                input_address = get_address();
-                getline(cin, dummy);
-                input_phone = get_phone_number();
-                records.modify_record(input_name, input_address, input_phone);
-                break;
-            case 7:
-                cout << "--------------------\n";
-                cout << "Modify Record(s) with the same address\n";
-                input_name = get_name();
-                input_address = get_address();
-                getline(cin, dummy);
-                input_phone = get_phone_number();
-                records.modify_record(input_name, input_address, input_phone);
-                break;
-            case 8:
+            case 4:
                 cout << "--------------------\n";
                 cout << "Printing Records...\n";
                 records.print_all_records();
                 break;
-            case 9:
+            case 5:
                 cout << "--------------------\n";
                 cout << "Delete Record(s) with the same name\n";
                 input_name = get_name();
                 records.delete_record(input_name);
                 break;
-            case 11:
-                cout << "--------------------\n";
-                cout << "Delete Record(s) with the same address\n";
-                input_address = get_address();
-                records.delete_record_address(input_address);
-                break;
-            case 10:
-                cout << "--------------------\n";
-                cout << "Delete Record(s) with the same phone number\n";
-                input_phone = get_phone_number();
-                records.delete_record_phone(input_phone);
-                break;
-            case 12:
+            case 6:
                 cout << "--------------------\n";
                 cout << "Reversing the order of all the Records...\n";
                 records.reverse_llist();
                 break;
         }
-        if (menu_selection != 13) {
+        if (menu_selection != 7) {
             display_commands();
         }
-    } while (menu_selection != 13);
+    } while (menu_selection != 7);
     return;
 }
 
@@ -182,17 +105,11 @@ void display_commands() {
     cout << "Usage:\n";
     cout << "\t1: Add a new record into the database.\n";
     cout << "\t2: Print information about a record using the name as the key. \n";
-    cout << "\t3: Print information about a record using the phone number as the key. \n";
-    cout << "\t4: Print information about a record using the address as the key. \n";
-    cout << "\t5: Modify a record in the database using the name as the key. \n";
-    cout << "\t6: Modify a record in the database using the phone number as the key. \n";
-    cout << "\t7: Modify a record in the database using the address as the key. \n";
-    cout << "\t8: Print all information in the database.\n";
-    cout << "\t9: Delete an existing record from the database.\n";
-    cout << "\t10: Delete an existing record from the database.\n";
-    cout << "\t11: Delete an existing record from the database.\n";
-	cout << "\t12: Reverse the order of all existing records from the database.\n";
-    cout << "\t13: Quit the program.\n";
+    cout << "\t3: Modify a record in the database using the name as the key. \n";
+    cout << "\t4: Print all information in the database.\n";
+    cout << "\t5: Delete an existing record from the database.\n";
+	cout << "\t6: Reverse the order of all existing records from the database.\n";
+    cout << "\t7: Quit the program.\n";
     cout << "What would you like to do?\n";
     return;
 }
@@ -200,10 +117,10 @@ void display_commands() {
 int get_menu_selection() {
     int selection = 0;
     cin >> selection;
-    while (cin.fail() || selection < 1 || selection > 13) {
+    while (cin.fail() || selection < 1 || selection > 7) {
         if (cin.fail()) {
             cout << "Your input was not an integer. Please enter an integer: ";
-        } else if ( selection < 1 || selection > 13) {
+        } else if ( selection < 1 || selection > 7) {
             cout << "Not a valid choice.\n";
             display_commands();
         }
@@ -256,6 +173,7 @@ string get_phone_number() {
 
 string get_file_name() {
     string file_name = "";
+    int count;
     cin.clear();
     cin.ignore(256, '\n');
     cout << "Please enter your FILE NAME ('.txt' file extension will be added): ";

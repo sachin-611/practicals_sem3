@@ -6,12 +6,8 @@
 	"llist.h"
 	"address_book.h"
 
-1607024473 ook.h"
-
 1604432529 /home/sachin/Desktop/prac/kjhh/record.h
 	<string>
-
-1607024317 
 
 1604432491 /home/sachin/Desktop/prac/kjhh/llist.h
 	<string>
@@ -113,77 +109,39 @@
 	"address_book.h"
 	"login.h"
 
-1605767874 source:f:\practical\practicals_sem3\fds\address_book\login.cpp
+1606993712 source:f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\address_book.cpp
+	<iostream>
+	<string>
+	"record.h"
+	"llist.h"
+	"address_book.h"
+
+1606993712 f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\record.h
+	<string>
+
+1606993712 f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\llist.h
+	<string>
+
+1606993712 f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\address_book.h
+	<string>
+
+1606993712 source:f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\llist.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"record.h"
+	"llist.h"
+	"address_book.h"
+
+1606993712 source:f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\login.cpp
 	<iostream>
 	<fstream>
 	"login.h"
 
-1605767874 f:\practical\practicals_sem3\fds\address_book\login.h
+1606993712 f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\login.h
 	<string>
 
-1605767874 source:f:\practical\practicals_sem3\fds\address_book\main.cpp
-	<iostream>
-	<string>
-	"address_book.h"
-	"login.h"
-
-1607023199 f:\practical\practicals_sem3\fds\address_book\address_book.h
-	<string>
-
-1607024437 source:f:\practical\practicals_sem3\fds\address_book\address_book.cpp
-	<iostream>
-	<string>
-	"record.h"
-	"llist.h"
-	"address_book.h"
-
-1605767874 f:\practical\practicals_sem3\fds\address_book\record.h
-	<string>
-
-1607024317 f:\practical\practicals_sem3\fds\address_book\llist.h
-	<string>
-
-1607024473 source:f:\practical\practicals_sem3\fds\address_book\llist.cpp
-	<iostream>
-	<fstream>
-	<string>
-	"record.h"
-	"llist.h"
-	"address_book.h"
-
-1607024437 source:/media/sachin/professional/practical/practicals_sem3/fds/address_book/address_book.cpp
-	<iostream>
-	<string>
-	"record.h"
-	"llist.h"
-	"address_book.h"
-
-1605767874 /media/sachin/professional/practical/practicals_sem3/fds/address_book/record.h
-	<string>
-
-1607026740 /media/sachin/professional/practical/practicals_sem3/fds/address_book/llist.h
-	<string>
-
-1607023199 /media/sachin/professional/practical/practicals_sem3/fds/address_book/address_book.h
-	<string>
-
-1607027186 source:/media/sachin/professional/practical/practicals_sem3/fds/address_book/llist.cpp
-	<iostream>
-	<fstream>
-	<string>
-	"record.h"
-	"llist.h"
-	"address_book.h"
-
-1605767874 source:/media/sachin/professional/practical/practicals_sem3/fds/address_book/login.cpp
-	<iostream>
-	<fstream>
-	"login.h"
-
-1605767874 /media/sachin/professional/practical/practicals_sem3/fds/address_book/login.h
-	<string>
-
-1605767874 source:/media/sachin/professional/practical/practicals_sem3/fds/address_book/main.cpp
+1606993712 source:f:\practical\practicals_sem3\fds\mini_project_address_book\address_book\main.cpp
 	<iostream>
 	<string>
 	"address_book.h"
