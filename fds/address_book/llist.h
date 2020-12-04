@@ -17,8 +17,12 @@ class llist {
         ~llist();
         int add_record(string, string, int, string);
         int print_record(string);
+        int print_record_phone(string);
+        int print_record_address(string);
         int modify_record(string, string, string);
+        int delete_record_phone(string);
         void print_all_records();
+        int delete_record_address(string);
         int delete_record(string);
         void reverse_llist();
 };

@@ -121,18 +121,6 @@ int llist::write_file() {
     return 0;
 }
 
-record* llist::reverse_llist(record *index) {
-    struct record *next = NULL;
-
-    if (index->next == NULL) {
-        start = index;
-        return start;
-    }
-    reverse_llist(index->next);
-    next = index->next;
-    index->next = NULL;
-}
-
 void llist::delete_all_records() {
     struct record *temp = start;
     struct record *index = NULL;
@@ -265,6 +253,44 @@ void llist::print_all_records() {
     return;
 }
 
+int llist::delete_record_address(string input_address) {
+    struct record *temp = NULL;
+    struct record *index = start;
+    struct record *previous = NULL;
+    int records_deleted = 0;
+
+    cout << "--------------------\n";
+    if (start == NULL) {
+        cout << "The Database is empty. Therefore, no records of " << input_address << " exist.\n";
+        cout << "--------------------\n";
+        return -1;
+    }
+    while (index != NULL) {
+        if (input_address == index->address) {
+            temp = index;
+            if (index == start) {
+                index = index->next;
+                start = index;
+            } else {
+                index = index->next;
+                previous->next = index;
+            }
+            delete temp;
+            ++records_deleted;
+        } else {
+            previous = index;
+            index = index->next;
+        }
+    }
+    if (records_deleted == 0) {
+        cout << "No records of " << input_address << " found.\n";
+    } else {
+        cout << records_deleted << " records of " << input_address << " records_deleted.\n";
+    }
+    cout << "--------------------\n";
+    return 1;
+}
+
 int llist::delete_record(string input_name) {
     struct record *temp = NULL;
     struct record *index = start;
@@ -303,6 +329,108 @@ int llist::delete_record(string input_name) {
     return 1;
 }
 
+int llist::delete_record_phone(string input_phone) {
+    struct record *temp = NULL;
+    struct record *index = start;
+    struct record *previous = NULL;
+    int records_deleted = 0;
+
+    cout << "--------------------\n";
+    if (start == NULL) {
+        cout << "The Database is empty. Therefore, no records of " << input_phone << " exist.\n";
+        cout << "--------------------\n";
+        return -1;
+    }
+    while (index != NULL) {
+        if (input_phone == index->phone_number) {
+            temp = index;
+            if (index == start) {
+                index = index->next;
+                start = index;
+            } else {
+                index = index->next;
+                previous->next = index;
+            }
+            delete temp;
+            ++records_deleted;
+        } else {
+            previous = index;
+            index = index->next;
+        }
+    }
+    if (records_deleted == 0) {
+        cout << "No records of " << input_phone << " found.\n";
+    } else {
+        cout << records_deleted << " records of " << input_phone << " records_deleted.\n";
+    }
+    cout << "--------------------\n";
+    return 1;
+}
+
+int llist::print_record_phone(string input_phone) {
+    struct record *index = start;
+    int records_printed = 0;
+
+    cout << "--------------------\n";
+    if (start == NULL) {
+        cout << "The Database is empty. Therefore, no records of " << input_phone << " exist.\n";
+        cout << "--------------------\n";
+        return -1;
+    }
+    while (index != NULL) {
+        if (input_phone == index->phone_number) {
+            ++records_printed;
+            cout << "====================\n";
+            cout << "Record #" << records_printed << " of:\n";
+            cout << "Name: " << index->name << "\n";
+            cout << "Address: " << index->address << '\n';
+            cout << "Year of Birth: " << index->birth_year << '\n';
+            cout << "Telephone Number: " << index->phone_number << '\n';
+        }
+        index = index->next;
+    }
+
+    if (records_printed == 0) {
+        cout << "No records of " << input_phone << " found.\n";
+    } else {
+        cout << records_printed << " records of " << input_phone << " printed." << '\n';
+    }
+    cout << "--------------------\n";
+    return 1;
+}
+
+int llist::print_record_address(string input_address) {
+    struct record *index = start;
+    int records_printed = 0;
+
+    cout << "--------------------\n";
+    if (start == NULL) {
+        cout << "The Database is empty. Therefore, no records of " << input_address << " exist.\n";
+        cout << "--------------------\n";
+        return -1;
+    }
+    while (index != NULL) {
+        if (input_address == index->address) {
+            ++records_printed;
+            cout << "====================\n";
+            cout << "Record #" << records_printed << " of:\n";
+            cout << "Name: " << index->name << "\n";
+            cout << "Address: " << index->address << '\n';
+            cout << "Year of Birth: " << index->birth_year << '\n';
+            cout << "Telephone Number: " << index->phone_number << '\n';
+        }
+        index = index->next;
+    }
+
+    if (records_printed == 0) {
+        cout << "No records of " << input_address << " found.\n";
+    } else {
+        cout << records_printed << " records of " << input_address << " printed." << '\n';
+    }
+    cout << "--------------------\n";
+    return 1;
+}
+
 void llist::reverse_llist() {
     cout << "--------------------\n";
     if (start == NULL) {
@@ -315,4 +443,18 @@ void llist::reverse_llist() {
     }
     cout << "--------------------\n";
     return;
+}
+
+record* llist::reverse_llist(record *index) {
+    record *rev=NULL;
+
+    while(index!=NULL)
+    {
+        record *temp=rev;
+        rev=index;
+        index=index->next;
+        rev->next=temp;
+    }
+    start=rev;
+    return rev;
 }
