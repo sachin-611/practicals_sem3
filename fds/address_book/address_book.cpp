@@ -8,10 +8,17 @@ using namespace std;
 int get_menu_selection2() {
     int selection = 0;
     cin >> selection;
+<<<<<<< HEAD
     while (cin.fail() || selection < 1 || selection > 5) {
         if (cin.fail()) {
             cout << "Your input was not an integer. Please enter an integer: ";
         } else if ( selection < 1 || selection > 5) {
+=======
+    while (cin.fail() || selection < 1 || selection > 4) {
+        if (cin.fail()) {
+            cout << "Your input was not an integer. Please enter an integer: ";
+        } else if ( selection < 1 || selection > 4) {
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
             cout << "Not a valid choice.\n";
             display_commands();
         }
@@ -27,9 +34,14 @@ void display_command_user() {
     cout << "Usage:\n";
     cout << "\t1: Print information about a record using the name as the key. \n";
     cout << "\t2: Print information about a record using the phone number as the key. \n";
+<<<<<<< HEAD
     cout << "\t3: Print information about a record using the address as the key. \n";
     cout << "\t4: Print all information in the database.\n";
     cout << "\t5: Quit the program.\n";
+=======
+    cout << "\t3: Print all information in the database.\n";
+    cout << "\t4: Quit the program.\n";
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
     cout << "What would you like to do?\n";
     return;
 }
@@ -56,6 +68,7 @@ void program()
                 input_phone=get_phone_number();
                 records.print_record_phone(input_phone);
                 break;
+<<<<<<< HEAD
              case 3:
                 cout << "--------------------\n";
                 cout << "Print Record(s) with the same address\n";
@@ -63,15 +76,25 @@ void program()
                 records.print_record_address(input_address);
                 break;
             case 4:
+=======
+            case 3:
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "--------------------\n";
                 cout << "Printing Records...\n";
                 records.print_all_records();
                 break;
         }
+<<<<<<< HEAD
         if (menu_selection != 5) {
             display_command_user();
         }
     } while (menu_selection != 5);
+=======
+        if (menu_selection != 4) {
+            display_command_user();
+        }
+    } while (menu_selection != 4);
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
     return;
 }
 
@@ -111,12 +134,15 @@ void run_program() {
                 break;
             case 4:
                 cout << "--------------------\n";
+<<<<<<< HEAD
                 cout << "Print Record(s) with the same address\n";
                 input_address = get_address();
                 records.print_record_address(input_address);
                 break;
             case 5:
                 cout << "--------------------\n";
+=======
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "Modify Record(s) with the same name\n";
                 input_name = get_name();
                 input_address = get_address();
@@ -124,7 +150,11 @@ void run_program() {
                 input_phone = get_phone_number();
                 records.modify_record(input_name, input_address, input_phone);
                 break;
+<<<<<<< HEAD
             case 6:
+=======
+            case 5:
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "--------------------\n";
                 cout << "Modify Record(s) with the same phone number\n";
                 input_name = get_name();
@@ -133,6 +163,7 @@ void run_program() {
                 input_phone = get_phone_number();
                 records.modify_record(input_name, input_address, input_phone);
                 break;
+<<<<<<< HEAD
             case 7:
                 cout << "--------------------\n";
                 cout << "Modify Record(s) with the same address\n";
@@ -143,16 +174,24 @@ void run_program() {
                 records.modify_record(input_name, input_address, input_phone);
                 break;
             case 8:
+=======
+            case 6:
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "--------------------\n";
                 cout << "Printing Records...\n";
                 records.print_all_records();
                 break;
+<<<<<<< HEAD
             case 9:
+=======
+            case 7:
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "--------------------\n";
                 cout << "Delete Record(s) with the same name\n";
                 input_name = get_name();
                 records.delete_record(input_name);
                 break;
+<<<<<<< HEAD
             case 11:
                 cout << "--------------------\n";
                 cout << "Delete Record(s) with the same address\n";
@@ -160,21 +199,35 @@ void run_program() {
                 records.delete_record_address(input_address);
                 break;
             case 10:
+=======
+            case 8:
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "--------------------\n";
                 cout << "Delete Record(s) with the same phone number\n";
                 input_phone = get_phone_number();
                 records.delete_record_phone(input_phone);
                 break;
+<<<<<<< HEAD
             case 12:
+=======
+            case 9:
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
                 cout << "--------------------\n";
                 cout << "Reversing the order of all the Records...\n";
                 records.reverse_llist();
                 break;
         }
+<<<<<<< HEAD
         if (menu_selection != 13) {
             display_commands();
         }
     } while (menu_selection != 13);
+=======
+        if (menu_selection != 10) {
+            display_commands();
+        }
+    } while (menu_selection != 10);
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
     return;
 }
 
@@ -183,6 +236,7 @@ void display_commands() {
     cout << "\t1: Add a new record into the database.\n";
     cout << "\t2: Print information about a record using the name as the key. \n";
     cout << "\t3: Print information about a record using the phone number as the key. \n";
+<<<<<<< HEAD
     cout << "\t4: Print information about a record using the address as the key. \n";
     cout << "\t5: Modify a record in the database using the name as the key. \n";
     cout << "\t6: Modify a record in the database using the phone number as the key. \n";
@@ -193,6 +247,15 @@ void display_commands() {
     cout << "\t11: Delete an existing record from the database.\n";
 	cout << "\t12: Reverse the order of all existing records from the database.\n";
     cout << "\t13: Quit the program.\n";
+=======
+    cout << "\t4: Modify a record in the database using the name as the key. \n";
+    cout << "\t5: Modify a record in the database using the phone number as the key. \n";
+    cout << "\t6: Print all information in the database.\n";
+    cout << "\t7: Delete an existing record from the database using name as the key.\n";
+    cout << "\t8: Delete an existing record from the database using phone nymber as the key.\n";
+	cout << "\t9: Reverse the order of all existing records from the database.\n";
+    cout << "\t10: Quit the program.\n";
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
     cout << "What would you like to do?\n";
     return;
 }
@@ -200,10 +263,17 @@ void display_commands() {
 int get_menu_selection() {
     int selection = 0;
     cin >> selection;
+<<<<<<< HEAD
     while (cin.fail() || selection < 1 || selection > 13) {
         if (cin.fail()) {
             cout << "Your input was not an integer. Please enter an integer: ";
         } else if ( selection < 1 || selection > 13) {
+=======
+    while (cin.fail() || selection < 1 || selection > 10) {
+        if (cin.fail()) {
+            cout << "Your input was not an integer. Please enter an integer: ";
+        } else if ( selection < 1 || selection > 10) {
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
             cout << "Not a valid choice.\n";
             display_commands();
         }
@@ -248,7 +318,8 @@ int get_birth_year() {
 
 string get_phone_number() {
     string phone_number = "";
-
+    cin.clear();
+    cin.ignore(256, '\n');
     cout << "Please enter the contact's TELEPHONE NUMBER: ";
     getline(cin, phone_number);
     return phone_number;

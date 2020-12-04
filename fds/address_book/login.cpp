@@ -31,10 +31,12 @@ bool admin_login(string username,string password) {
         {
             read_file.close();
             delete temp;
+            cout<<"Welcome "<<username<<", logged in as admin!!"<<endl;
             return true;
         }
     } while (!read_file.eof());
     read_file.close();
+    cout<<"Invalid username password!!\nlogged in as user!!"<<endl;
     return false;
 }
 bool login()
@@ -43,7 +45,10 @@ bool login()
     char ans;
     cin>>ans;
     if(!(ans=='y' || ans=='Y'))
+    {
+        cout<<"logged in as user!!"<<endl;
         return false;
+    }
     string username,password;
     cout<<"Enter username : ";
     cin>>username;

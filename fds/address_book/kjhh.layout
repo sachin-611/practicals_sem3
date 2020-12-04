@@ -2,11 +2,16 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="record.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="record.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
 		<Cursor>
 			<Cursor1 position="145" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="login.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="977" topLine="0" />
@@ -20,6 +25,26 @@
 	<File name="address_book.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="130" topLine="0" />
+=======
+	<File name="llist.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="682" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="llist.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14081" topLine="423" />
+		</Cursor>
+	</File>
+	<File name="address_book.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5114" topLine="117" />
+		</Cursor>
+	</File>
+	<File name="address_book.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="199" topLine="0" />
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
 		</Cursor>
 	</File>
 	<File name="address_book.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,6 +52,7 @@
 			<Cursor1 position="208" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="save.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="98" topLine="0" />
@@ -45,6 +71,26 @@
 	<File name="llist.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="12173" topLine="366" />
+=======
+	<File name="secret.txt" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="login.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1289" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="save.txt" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="78" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="344" topLine="0" />
+>>>>>>> bf94320c3d51a1afa704530c311ae5a79bf0105a
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
